@@ -65,6 +65,7 @@
   ※ originがない場合、毎回URLを指定する必要がある。originで指定しておくとgit cloneの時にこのリポジトリを取得する
 - git push [remote] [branch]: ローカルリポジトリの内容をリモートリポジトリに反映
   ※ git push origin masterみたいな感じ
+    初回はgit push -u origin masterとやっておくと、次回以降の入力が楽になる
 - 事前準備としてAccess Token生成が必要
   ※ User > Setttings > Developer settings > Personal access tokens
 - リポジトリはGUIから作成しておく
