@@ -71,3 +71,19 @@
 - リポジトリはGUIから作成しておく
   ※ User > Your Profile > Repositories > New
 
+## コマンドにエイリアスをつける
+※ 下記はあくまでサンプルなので、実際の付け方は自由
+- git config --global alias.ci commit
+- git config --global alias.st status
+- git config --global alias.br branch
+- git config --global alias.co checkout
+  ※ --globalは~/.gitconfigを更新、ない場合はproject/.git/configを更新
+
+## 管理しないファイルをGitの管理から外す
+- 自動生成されるファイルやパスワードなどが入ったファイルは除外すべき
+- .gitignoreファイルを作成して記載
+
+## ファイルへの変更を取り消す(ワークツリーのファイルを元の状態に戻す)
+- git checkout -- [file | directory | .]
+  ※ '--'はブランチ名とファイル名が被った場合に明示的にファイルなどを指定するために入力
+    実態としてはstageの状況を取得してワークツリーに反映
