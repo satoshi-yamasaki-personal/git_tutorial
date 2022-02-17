@@ -60,5 +60,13 @@
 ## ファイルの移動を記録
 - git mv [old_file] [new_file]: ファイル名変更(ステージに記録)
 
-
+## GitHubにプッシュ
+- git remote add origin https://github.com/[user]/[repository].git: originという名前でリモートリポジトリ(GitHub)を新規追加
+  ※ originがない場合、毎回URLを指定する必要がある。originで指定しておくとgit cloneの時にこのリポジトリを取得する
+- git push [remote] [branch]: ローカルリポジトリの内容をリモートリポジトリに反映
+  ※ git push origin masterみたいな感じ
+- 事前準備としてAccess Token生成が必要
+  ※ User > Setttings > Developer settings > Personal access tokens
+- リポジトリはGUIから作成しておく
+  ※ User > Your Profile > Repositories > New
 
