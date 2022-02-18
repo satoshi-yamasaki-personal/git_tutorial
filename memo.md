@@ -143,6 +143,8 @@
   ※ git branch featureとか。あくまで作成だけで切り替えはしない
 - git branch: 今あるブランチの一覧を表示(ローカルリポジトリのみ)
   ※ -aをつけるとリモートリポジトリのブランチも表示
+- git branch [branch_name] [既存branch_name]
+  ※ 既存ブランチから新たにブランチ作成
 
 ## ブランチの切り替え
 - git checkout [branch-name]: 切り替え
@@ -180,4 +182,14 @@
 
 
 # GitHubを利用した開発の流れ
+## pull request作成とマージ
+- git push
+- プルリクエスト作成: Pull requests > New pull request > compareにブランチ設定 > Create pull request > コメント入れる > Reviewer > 担当入力
+- プルリクエスト確認: Pull requests > 対象を選択 > File changed > コメント入れてやり取り > Review changes > Approve > Submit review
+- プルリクエスト取込: Pull requests > 対象を選択 > merge > delete branches
+
+## GitHub Flowの流れ
+- 
+- 
+- 
 
