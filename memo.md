@@ -188,8 +188,17 @@
 - プルリクエスト確認: Pull requests > 対象を選択 > File changed > コメント入れてやり取り > Review changes > Approve > Submit review
 - プルリクエスト取込: Pull requests > 対象を選択 > merge > delete branches
 
-## GitHub Flowの流れ
-- 
-- 
-- 
+# リベースで変更履歴を修正
+- git rebase [branch_name]: 指定したブランチを取り込む(現在のブランチのparentを指定したブランチにすることで、履歴がきれいになる)
+- git checkout feature: featureブランチに移動
+- git rebase master: featureブランチにmasterブランチを反映(rebase)
+- git checkout master: masterブランチに移動
+- git meerge feature: masterブランチにfeatureブランチを反映(merge)
+
+## リベースでしてはいけないこと
+- GitHubにプッシュしたコミットをリベースしない！
+- git push -fは絶対NG！
+
+
+
 
