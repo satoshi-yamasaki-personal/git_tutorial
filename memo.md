@@ -218,3 +218,13 @@
 
 - git config --global pull.rebase true
 - git config branch.master.rebase true: masterブランチでgit pullする時だけ適用の場合
+
+## リベースで履歴を書き換える
+- コミットをきれいに整えてからpushしたいときは履歴を書き換える
+  ※ Pushしていないことが大前提
+- git commit --amend: 直前のcommitだけやり直す場合はこれでいい
+- git rebase -i [commit_id]
+- git rebase -i HEAD~3: 直前3つのcommitをリベースする
+- git rebase -i HEAD^2: マージを含む直近3つのcommitをリベースする
+
+
