@@ -225,6 +225,54 @@
 - git commit --amend: 直前のcommitだけやり直す場合はこれでいい
 - git rebase -i [commit_id]
 - git rebase -i HEAD~3: 直前3つのcommitをリベースする
-- git rebase -i HEAD^2: マージを含む直近3つのcommitをリベースする
+- git rebase -i HEAD^2: マージした場合の2番目の親を指定してリベースする
 
+<example>
+git rebase -i HEAD~3
+エディタが起動し、3commitが表示
+修正したい箇所をpick -> editに修正してエディタ終了
+ファイルを修正
+git commit --amend
+git rebase --continue
+
+- コミットを並び替え
+git rebase -i HEAD~3 (古い順に表示される)
+順番を並び替える
+git rebase --continue
+- コミット削除
+git rebase -i HEAD~3
+対象にsquashを指定
+※ git rebaseはまとめて処理される
+- コミットを分割
+git rebase -i HEAD~3
+対象にeditを指定
+git reset HEAD^: stageしてない状態にする
+それぞれadd && commit
+
+# タグ
+- リリースポイントにタグづけとかで使う
+- git tag: タグの一覧を表示
+- git tag -l "xxxx": パターンを指定してタグを表示
+- コミットは現在の最新が指定される
+- タグには注釈付き(annotated)と軽量(lightweight)の2種類がある
+- git tag -a [tag_name] -m [message]: 注釈版タグ作成
+- git tag [tag_name]: 軽量版タグ作成
+※ 後からタグづけする
+- git tag [tag_name] [commit_name]
+- git show [tag_name]: タグのデータと関連づけられたコミットを表示
+- git push [remote] [tag_name]: 個別のタグをリモートに送信
+- git push origin --tags: タグをリモートに一斉送信
+  ※ 一緒にソースもpushされる
+
+# 作業の一時待避
+- コミット前の変更を待避する
+- git stash
+- git stash save: saveは省略可(git stashと同じ)
+- git stash list: スタッシュの一覧を表示
+- git stash apply: 最新の作業を復元(ワークツリーだけ)
+- git stash apply --index: ステージも含めて復元
+- git stash apply [stash_name]
+- git stash drop: 最新の作業を削除
+- git stash drop [stash_name]: 指定の作業を削除
+- git stash clear: 全作業を削除
 
